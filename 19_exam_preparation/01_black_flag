@@ -1,0 +1,10 @@
+1. First line receive days of the plunder
+2. Second line receive daily plunder
+3. Third line receive expected plunder
+4. Calculate plunder dor all days by multiplying days*daily plunder
+5. Add additional plunder every third day 0.5*daily plunder
+5. Every fifth day remove 30% of total plunder
+6. Check if the gained plunder reach target
+7. If gained plunder is more or equal print "Ahoy ..."
+8. If gained plunder is less calculate percentage left
+9 Format number to 2nd decimal
