@@ -1,0 +1,17 @@
+judge https://judge.softuni.org/Contests/Practice/Index/2517#2
+1. first line receive sequence of elements
+2. while cycle until command == "end"
+3. receive the indexes until "end" or win (len(sequence of elements) == 0)
+4. Split indexes by space
+5. Start counting moves
+6. Check if two equal indexes or out of bounds of the sequence. If so print massage and
+add two matching elements at the middle of the sequence format "-{number of moves until now}a"
+Print message "Invalid input! Adding additional elements to the board"
+7. If the player hit two matching elements,remove them and print
+"Congrats! You have found matching elements - {element}!"
+8. If the player hit two different elements print "Try again!"
+9. If the player hit all matching elements before he receives "end" print
+"You have won in {number of moves until now} turns!"
+10. If the player receives "end" before he hits all matching elements print
+"Sorry you lose :("
+"{the current sequence's state}"
