@@ -1,0 +1,16 @@
+1. First line receive sequence of targets - int value
+2. Second line receive command
+3. While cycle until command == "End"
+4. Command.split() and if-else cycle
+5. If command[0] == "Shoot" ; index = command[1]; power= command[2]
+        1. Check if the index exists
+        2. Reduce target value by the given power
+        3. If target value <=0 remove the target
+6. If command[0] == "Add" ; index = command[1]; value= command[2]
+        1. Check if the index exists. If not print "Invalid placement!"
+        2. Insert a target with the value at the index
+7. If command[0] == "Strike" ; index = command[1]; radius= command[2]
+        1. Check if the indexes with radius before and after the target exists
+            If not print ("Strike missed!")
+        2. Remove the target at index and the ones in radius
+8. After command == "End" print(f"{target1}|{target2}…|{targetn}")
