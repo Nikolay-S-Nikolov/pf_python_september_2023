@@ -1,0 +1,16 @@
+1. First line receive initial treasure chest - loot separated by "|" and split("|")
+2. Second line receive command as string
+3. While cycle until command == "Yohoho!"
+4. Split the command by space
+5. If-Else cycle for command[0]
+6. If command[0] == "Loot" for cycle and if items not in treasure chest
+    insert them at the beginning of the chest_list
+7. If command[0] == "Drop" if index = int(command[1]) is valid
+    Remove the loot at the given position and add it at the end of the treasure chest
+8. If command[0] == "Steal" stole_count = int(command[1])  - remove last stole_count items
+    from the treasure chest. If fewer items remove as much as you can.
+    Print the stolen items separated by ", ":
+9. if the chest is empty print("Failed treasure hunt.")
+9. Calculate average treasure gain = sum of len() of treasure items divided by their count
+    Format to second decimal
+    print(f"Average treasure gain: {average_gain} pirate credits.")
