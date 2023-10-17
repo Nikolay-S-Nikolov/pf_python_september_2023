@@ -1,0 +1,10 @@
+1. First line receive the number of the students :int
+2. Second line receive the number of the lectures :int
+3. Third line receive the additional bonus :int
+4. For cycle by students count
+5. Create max_bonus = 0 and attendance = 0
+6. Receive attendance of each student
+7. Calculate bonus for each student and compare if it is >max_bonus
+    and store it if so
+8. print(f"Max Bonus: {max_bonus}.")
+    print(f"The student has attended {student_attendances} lectures.")
