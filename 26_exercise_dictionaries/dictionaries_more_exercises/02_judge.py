@@ -1,19 +1,3 @@
-# stud_data = []
-# while True:
-#     Name = input("Enter the student name :")
-#     Age = input("Enter the age :")
-#     Gender = input("Enter the {} grade :")
-#     repeat = input("Do you want to add input more?: ")
-#     stud_data.append({
-#         "Name": Name,
-#         "Age": Age,
-#         "Gender": Gender
-#     })
-#     if repeat == "no" or repeat == "NO":
-#         break
-#
-# print(stud_data)
-
 judge_dict = {}
 input_line = input()
 users = []
@@ -35,7 +19,8 @@ while input_line != "no more time":
 for contest_name, username_points in judge_dict.items():
     print(f"{contest_name}: {len(username_points)} participants")
     count = 0
-    username_points = {k: v for k, v in sorted(username_points.items(), key=lambda x: x[1], reverse=True)}
+    username_points = dict(reversed(list(sorted(username_points.items()))))
+    username_points = dict(reversed(list(sorted(username_points.items(), key=lambda x: x[1]))))
     for user, user_points in username_points.items():
         count += 1
         print(f"{count}. {user} <::> {user_points}")
@@ -47,7 +32,8 @@ for name in users:
             if name == user:
                 total_points += user_points
     individual_dict[name] = total_points
-individual_dict = {k: v for k, v in sorted(individual_dict.items(), key=lambda x: x[1], reverse=True)}
+individual_dict = dict(reversed(list(sorted(individual_dict.items()))))
+individual_dict = dict(reversed(list(sorted(individual_dict.items(), key=lambda x: x[1]))))
 print("Individual standings:")
 num = 0
 for n, p in individual_dict.items():
