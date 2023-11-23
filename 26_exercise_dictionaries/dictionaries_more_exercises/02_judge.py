@@ -19,8 +19,7 @@ while input_line != "no more time":
 for contest_name, username_points in judge_dict.items():
     print(f"{contest_name}: {len(username_points)} participants")
     count = 0
-    username_points = dict(reversed(list(sorted(username_points.items()))))
-    username_points = dict(reversed(list(sorted(username_points.items(), key=lambda x: x[1]))))
+    username_points = {k: v for k, v in sorted(username_points.items(), key=lambda x: (-x[1], x[0]))}
     for user, user_points in username_points.items():
         count += 1
         print(f"{count}. {user} <::> {user_points}")
@@ -32,8 +31,7 @@ for name in users:
             if name == user:
                 total_points += user_points
     individual_dict[name] = total_points
-individual_dict = dict(reversed(list(sorted(individual_dict.items()))))
-individual_dict = dict(reversed(list(sorted(individual_dict.items(), key=lambda x: x[1]))))
+individual_dict = {k: v for k, v in sorted(individual_dict.items(), key=lambda x: (-x[1], x[0]))}
 print("Individual standings:")
 num = 0
 for n, p in individual_dict.items():
