@@ -25,15 +25,45 @@
 #     key = input("Enter student name:")
 #     value = input("Enter student age:")
 #     student_info.append({"Name": key, "Age": value})
-#     program_exit = input("To exit print 'y':")
-#     if program_exit == "y":
-#         break
-# print(student_info)
-my_dict1 = {'Peter': [{'Adc': 400}], 'George': [{'Jungle': 300}], 'Simon': [{'Mid': 200}, {'Support': 250}]}
-# for name, skills in my_dict1.items():
-#     print(name)
-#     for skill in skills:
-#         for k, v in skill.items():
-#             print(f"{k} -> {v}")
-result = [k for k in my_dict1['Simon'] if 'Support' in k.keys()]
-print(result)
+# #     program_exit = input("To exit print 'y':")
+# #     if program_exit == "y":
+# #         break
+# # print(student_info)
+# my_dict1 = {'Peter': [{'Adc': 400}], 'George': [{'Jungle': 300}], 'Simon': [{'Mid': 200}, {'Support': 250}]}
+# # for name, skills in my_dict1.items():
+# #     print(name)
+# #     for skill in skills:
+# #         for k, v in skill.items():
+# #             print(f"{k} -> {v}")
+# result = [k for k in my_dict1['Simon'] if 'Support' in k.keys()]
+# print(result)
+
+dwarf_data = [{'dwarf_name': 'Peter', 'dwarf_hat_color': 'Red', 'dwarf_physics': 2000},
+              {'dwarf_name': 'Teodor', 'dwarf_hat_color': 'Blue', 'dwarf_physics': 1000},
+              {'dwarf_name': 'George', 'dwarf_hat_color': 'Green', 'dwarf_physics': 1000},
+              {'dwarf_name': 'Simon', 'dwarf_hat_color': 'Blue', 'dwarf_physics': 4500},
+              {'dwarf_name': 'Dopey', 'dwarf_hat_color': 'Simon', 'dwarf_physics': 1000}]
+dwarf_new_name = "Peter"
+dwarf_new_hat = "Red"
+dwarf_new_physics = 3000
+for items in dwarf_data:
+    if items["dwarf_name"] == dwarf_new_name \
+            and items["dwarf_hat_color"] == dwarf_new_hat \
+            and items["dwarf_physics"] < dwarf_new_physics:
+        del dwarf_data.index[items]
+# dwarf_data.append({"dwarf_name": dwarf_new_name, "dwarf_hat_color": dwarf_new_hat, "dwarf_physics": dwarf_new_physics})
+color_list = [y['dwarf_hat_color'] for y in dwarf_data]
+# color_list = [a for a in sorted(color_list, key=lambda b: color_list.count(b))]
+print(color_list)
+dwarf_data = [x for x in
+              sorted(dwarf_data, key=lambda z: (-z["dwarf_physics"], color_list.count(z['dwarf_hat_color'])))]
+print(dwarf_data)
+# dwarf_new_name = "George"
+# dwarf_new_hat = "Green"
+# dwarf_new_physics = 2000
+# for items in my_list:
+#     if items["dwarf_name"] == dwarf_new_name \
+#             and items["dwarf_hat_color"] == dwarf_new_hat \
+#             and items["dwarf_physics"] < dwarf_new_physics:
+#         items["dwarf_physics"] = dwarf_new_physics
+# print(my_list)
