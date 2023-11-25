@@ -7,9 +7,10 @@ while command != "Once upon a time":
     same_name_color = False
     for items in dwarf_data:
         if items["dwarf_name"] == dwarf_name \
-                and items["dwarf_hat_color"] == dwarf_hat_color \
-                and items["dwarf_physics"] < dwarf_physics:
-            items["dwarf_physics"] = dwarf_physics
+                and items["dwarf_hat_color"] == dwarf_hat_color:
+            same_name_color = True
+            if items["dwarf_physics"] < dwarf_physics:
+                items["dwarf_physics"] = dwarf_physics
             same_name_color = True
     if not same_name_color:
         dwarf_data.append({"dwarf_name": dwarf_name, "dwarf_hat_color": dwarf_hat_color,
