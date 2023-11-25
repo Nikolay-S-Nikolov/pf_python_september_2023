@@ -14,7 +14,7 @@ for _ in range(number_n):
     health = int(health)
     dragon = {name: [damage, health, armor]}
     if type_dragon not in dragon_army.keys():
-        dragon_army[type_dragon] = dict(dragon)
+        dragon_army[type_dragon] = dragon
     else:
         for n, d in dragon_army[type_dragon].items():
             if name == n:
