@@ -3,6 +3,8 @@ import re
 count_barcode = int(input())
 
 pattern = r"@[#]+[A-Z]{1}[A-Za-z0-9]{3}[A-Za-z0-9]+[A-Z]{1}@[#]+"
+
+            @#{1,}[A-Z][A-Za-z0-9]{4,}[A-z]@#{1,}
 pattern_group = r'\d+'
 
 for _ in range(count_barcode):
